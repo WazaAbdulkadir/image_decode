@@ -42,5 +42,5 @@
 
   + Algoritma flowchart : 
 
-  ![bitstream](Bitstream.png)
+    ![bitstream](Bitsream.png)
 
