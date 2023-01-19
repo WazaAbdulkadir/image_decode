@@ -32,11 +32,11 @@
       
   + 1200 dc deger alindiktan sonraki ac encode lar da cozumlenir. 63 decimal ac deger olusturulduktan sonra son 1*64 luk dc, ac blok olusturulur. Ve netice olarak 1*76800 luk array olusturulmus olunur. 
 
-  + inverse zigzag yapilir. 
+  + inverse zigzag yapilir. [zigzag_izigzag_pythoncode_link](https://github.com/getsanjeev/compression-DCT/blob/master/zigzag.py) 
 
   + inverse quantization yapilir. 
       
-  + Inverce dct yapilir. 
+  + Inverce dct yapilir. `scipy.fft.idct` 
 
   + piksel degerlerine 128 eklenir. Bitstream cozumlenmis olunur. 
 
@@ -44,4 +44,4 @@
 
     ![bitstream](Bitsream.png)
 
-[zigzag_izigzag_pythoncode_link](https://github.com/getsanjeev/compression-DCT/blob/master/zigzag.py)
+
