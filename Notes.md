@@ -44,3 +44,4 @@
 
     ![bitstream](Bitsream.png)
 
+[zigzag_izigzag_pythoncode_link](https://github.com/getsanjeev/compression-DCT/blob/master/zigzag.py)
