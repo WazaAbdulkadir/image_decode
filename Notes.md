@@ -6,7 +6,9 @@
 
      + 100 in yanina 110 eklenir ve dc deger: 100110 seklinde kodlanir.  
 
-     + DC_code tablosu: ![dc_code](dc_code.png)
+     + DC_code tablosu:
+     
+       ![dc_code](dc_code.png)
 
 - AC encoding: AC_code + AC_value
 
