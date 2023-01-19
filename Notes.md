@@ -16,7 +16,7 @@
  
   + AC code tablosundan bir parca:
 
-  ![ac_code](ac_code.png)
+       ![ac_code](ac_code.png)
 
   + RUN, non-zero sayidan once kac tane 0 oldugunu, CAT ise non-zero ac degerin binary formatinda kac bit ile ifade edilecegini belirtiyor. 
      
@@ -39,3 +39,8 @@
   + Inverce dct yapilir. 
 
   + piksel degerlerine 128 eklenir. Bitstream cozumlenmis olunur. 
+
+  + Algoritma flowchart : 
+
+  ![bitstream](Bitstream.png)
+
