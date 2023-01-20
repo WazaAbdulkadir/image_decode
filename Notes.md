@@ -8,7 +8,7 @@
 
   + DC_code tablosu:
      
-       ![dc_code](dc_code.png)
+       ![dc_code](images/dc_code.png)
 
 - AC encoding: AC_code + AC_value
 
@@ -16,7 +16,7 @@
  
   + AC code tablosundan bir parca:
 
-       ![ac_code](ac_code.png)
+       ![ac_code](images/ac_code.png)
 
   + RUN, non-zero sayidan once kac tane 0 oldugunu, CAT ise non-zero ac degerin binary formatinda kac bit ile ifade edilecegini belirtiyor. 
      
@@ -42,6 +42,6 @@
 
   + Algoritma flowchart : 
 
-    ![bitstream](Bitsream.png)
+    ![bitstream](images/Bitsream.png)
 
 
