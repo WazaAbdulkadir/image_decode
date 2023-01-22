@@ -3,7 +3,7 @@ def bin_to_dec(bin):
     if(bin[0] == '0'):
         sizeofbin = len(bin)
         # str format does not support to item assignment
-        # so create new empty str object
+        # so I created new empty str object
         newbin = ''
         for i in range(sizeofbin):
             if (bin[i] == '0'):

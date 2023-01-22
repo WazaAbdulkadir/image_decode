@@ -1,6 +1,5 @@
 import numpy as np
 #def dc_table():
-# değerler -128 ile 127 arasında olduğu için size 7 den sonrası bizim için mümkün değil dolayısıyla dc tablonun ilk 8 elemanını alacağım:
 def dc_table_size(arr):
     if arr == '00':
         size = 0
@@ -18,7 +17,16 @@ def dc_table_size(arr):
         size = 6
     elif arr == '11110':
         size = 7
+    elif arr == '111110':
+        size = 8
+    elif arr == '1111110':
+        size = 9
+    elif arr == '11111110':
+        size = 10
+    elif arr == '111111110':
+        size = 11
     else:
-        print("impossible dc size code ")
+        #print("send new bit or it is impossible dc size code ")
+        size = 12
 
     return size
