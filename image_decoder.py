@@ -3,6 +3,7 @@ import binascii
 
 from dc_table import dc_table_size
 from dc_bin_to_decimal import bin_to_dec
+from calc_ac_size_and_zero_count import  ac_size_and_zero_count_table
 
 #arr = np.array([1, 2, 3, 4, 5])
 #print(arr) 
@@ -85,15 +86,12 @@ for i in range(lenofbin_array):
 #    dc_value_counter += 1
 #    handle_ac()
 
-
-
 number_of_detected_dc_value = 0
 bin_array_index = 0
 dc_ac_array = []
 dc_ac_index = 0
 #decimal_dc_value = 0
-while number_of_detected_dc_value < 1:
-
+while number_of_detected_dc_value < 1200:
 
     #### handle dc values #####
     dc_value_detected =0
@@ -123,14 +121,44 @@ while number_of_detected_dc_value < 1:
 
     dc_ac_array.append(decimal_dc_value)
 
-
     #### handle ac values ####
-
     ac_counter = 1
-    zero_count = 0
+    while ac_counter != 63:
 
-    # while ac_counter < 64:
+        ac_value_detected = 0
+        ac_code_detection_array = ''
+        while ac_value_detected != 1:
+            ac_code_detection_array = ac_code_detection_array + all_bin_values[bin_array_index]
+            bin_array_index +=1
+            numberofzero_and_sizeofacvalue=ac_size_and_zero_count_table(ac_code_detection_array)
 
+            if 0 <= numberofzero_and_sizeofacvalue[0] <= 15 and  0<= numberofzero_and_sizeofacvalue[1] <= 10 :
+                ac_value_detected = 1
+            else:
+                print('add a bit to detect ac value')
+
+
+
+        numberofzero = numberofzero_and_sizeofacvalue[0]
+        sizeof_nonzero_ac = numberofzero_and_sizeofacvalue[1]
+        ### if else structure to check if EOB  ###
+        if (numberofzero == 0 and sizeof_nonzero_ac == 0) : #1010 detected: EOB
+            for i in range(64-ac_counter):
+                dc_ac_array.append(0)
+            ac_counter = 63
+        else:
+            for i in range(numberofzero):
+                dc_ac_array.append(0)
+            ac_counter = ac_counter + numberofzero_and_sizeofacvalue[0] + numberofzero_and_sizeofacvalue[1]
+
+
+        convert_ac_bin_value_to_decimal = ''
+        for i in range(sizeof_nonzero_ac):
+            convert_ac_bin_value_to_decimal = convert_ac_bin_value_to_decimal + all_bin_values[bin_array_index]
+            bin_array_index +=1
+            if(i == sizeof_nonzero_ac-1):
+                decimal_ac_value = bin_to_dec(convert_ac_bin_value_to_decimal)
+                dc_ac_array.append(decimal_ac_value)
 
 
 #handle_dc()

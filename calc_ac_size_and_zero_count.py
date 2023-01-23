@@ -155,7 +155,7 @@ def ac_size_and_zero_count_table(arr):
 
     elif(arr=='1111011' or arr == '111111110110' or arr == '1111111110100110' or arr == '1111111110100111' or arr == '1111111110101000'
     or arr == '1111111110101001' or arr == '1111111110101010' or arr == '1111111110101011' or arr == '1111111110101100' or arr == '1111111110101101'):
-        zero_count =10
+        zero_count =6
         if (arr=='1111011'):
             ac_size = 1
         elif arr == '111111110110':
@@ -405,5 +405,11 @@ def ac_size_and_zero_count_table(arr):
             ac_size = 9
         elif arr == '1111111111111101':
             ac_size = 10
+
+    else:
+        # arbitrary assignment to check if, if or elif statement occur
+        zero_count = 20
+        ac_size = 30
+
 
     return (zero_count, ac_size)
