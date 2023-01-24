@@ -65,7 +65,7 @@ def ac_size_and_zero_count_table(arr):
             ac_size = 3
         elif( arr== '11111110100'):
             ac_size = 4
-        elif(arr == '1111111110001001'):
+        elif(arr ==  '1111111110001001'):
             ac_size = 5
         elif (arr == '1111111110001010'):
             ac_size = 6
@@ -388,22 +388,24 @@ def ac_size_and_zero_count_table(arr):
         if arr == '11111111001': # if sixteen consecutive zero
             ac_size = 0
         elif arr == '1111111111110101':
-            ac_size = 2
+            ac_size = 1
         elif arr == '1111111111110110':
-            ac_size = 3
+            ac_size = 2
         elif arr == '1111111111110111':
-            ac_size = 4
+            ac_size = 3
         elif arr == '1111111111111000':
-            ac_size = 5
+            ac_size = 4
         elif arr == '1111111111111001':
-            ac_size = 6
+            ac_size = 5
         elif arr == '1111111111111010':
-            ac_size = 7
+            ac_size = 6
         elif arr == '1111111111111011':
-            ac_size = 8
+            ac_size = 7
         elif arr == '1111111111111100':
-            ac_size = 9
+            ac_size = 8
         elif arr == '1111111111111101':
+            ac_size = 9
+        elif arr == '1111111111111110':
             ac_size = 10
 
     else:
