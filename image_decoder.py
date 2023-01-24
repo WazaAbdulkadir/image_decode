@@ -12,6 +12,8 @@ from matplotlib import pyplot as plt
 from PIL import Image
 
 file = open("football_bitstream2.bin","rb")
+#file = open("im1.bin","rb")
+#file = open("im2.bin","rb")
 # I added .hex because without it hex values was translating into ascii
 byte_read = file.read().hex()
 file.close()
@@ -238,7 +240,7 @@ Iqntz_array = np.zeros((240,320))
 
 for i in range(0,240,8):
     for j in range(0,320,8):
-        Iqntz_array[i:i+8,j:j+8] = np.multiply(square_array[i:i+8,j:j+8],Quantization_table)
+        Iqntz_array[i:i+8,j:j+8] = np.multiply(square_array[i:i+8,j:j+8],np.uint16(Quantization_table))
 
 
 
@@ -257,9 +259,9 @@ intIdct =Idct_array.astype(int)
 
 image = intIdct + 128
 
-#plt.imshow(image, cmap='gray')
+plt.imshow(image, cmap='gray')
 
 img = Image.fromarray(np.uint8(image),'L')
 img.save("decodedimage.TIFF")
 
-plt.imshow(img,cmap='gray')
+#plt.imshow(img,cmap='gray')
