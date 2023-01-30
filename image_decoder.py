@@ -11,9 +11,10 @@ from scipy.fftpack import ifft, idct
 from matplotlib import pyplot as plt
 from PIL import Image
 
-file = open("football_bitstream2.bin","rb")
+#file = open("football_bitstream2.bin","rb")
 #file = open("im1.bin","rb")
 #file = open("im2.bin","rb")
+file = open("chess.bin","rb")
 # I added .hex because without it hex values was translating into ascii
 byte_read = file.read().hex()
 file.close()
