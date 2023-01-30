@@ -44,4 +44,15 @@
 
     ![bitstream](images/Bitsream.png)
 
+- MBA ile revizyon:
 
+  + Decoding aşamasından sonra 0 dan küçük ve 255 ten büyük sayılar oluşuyor.
+Oluşmaması lazımsa nerede hata yaptım. Oluşması normalse nasıl 0-255 arasına map edelim.
+
+  + Son blokta sıkıntı var. Son blok hiç dekode olunmuyor gibi.    
+
+  + uint8() ile cast edip kaydettiğim için negatif sayılar büyük piksel değerlerine dönüşmüş olabilir.
+
+  + denemek için - sayıları 0 a; 255 ten büyük sayıları 255 e çeken bir for loop ekleyebilirim. 
+Ya da direk 0-255 arasına map ederim değerleri.  
+	
