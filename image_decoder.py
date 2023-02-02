@@ -12,9 +12,9 @@ from matplotlib import pyplot as plt
 from PIL import Image
 
 #file = open("football_bitstream2.bin","rb")
-#file = open("im1.bin","rb")
-#file = open("im2.bin","rb")
-file = open("chess.bin","rb")
+#file = open("im1.bin","rb")#
+file = open("im2.bin","rb")
+#file = open("chess.bin","rb")
 # I added .hex because without it hex values was translating into ascii
 byte_read = file.read().hex()
 file.close()
@@ -213,22 +213,27 @@ yindex = 0
 mid_array_ready = 0
 for i in range(len(dc_ac_array)):  #len(dc_ac_array)
 
-    if (i%64==0 and i != 0):
-        mid_array= inverse_zigzag(line_array,8,8)
-        line_array = []
-        mid_array_ready = 1
-
-    line_array.append(dc_ac_array[i])
+    ###last block check logic added
+    if ((i%64==0 and i != 0) or (i == len(dc_ac_array)-1)):
+        if (i == len(dc_ac_array)-1):
+            line_array.append(dc_ac_array[i])
+            mid_array = inverse_zigzag(line_array, 8, 8)
+            mid_array_ready = 1
+        else:
+            mid_array= inverse_zigzag(line_array,8,8)
+            line_array = []
+            mid_array_ready = 1
 
     if(mid_array_ready):
     #for j in range(1,1200):
-        square_array[yindex:yindex+8, xindex:xindex+8] = mid_array
-        xindex +=8
+        square_array[xindex:xindex+8, yindex:yindex+8] = mid_array
+        yindex +=8
         mid_array_ready = 0
-        if (xindex == 320):
-            xindex = 0
-            yindex += 8
+        if (yindex >= 320):
+            yindex = 0
+            xindex += 8
 
+    line_array.append(dc_ac_array[i])
 
 
 ########## Inverse Quantization ##########
@@ -261,6 +266,15 @@ intIdct =Idct_array.astype(int)
 image = intIdct + 128
 
 plt.imshow(image, cmap='gray')
+
+for i in range(len(image)):
+    for j in range(len(image[0])):
+        if(image[i,j] < 0):
+            image[i,j] = 0
+
+        elif(image[i,j] > 255):
+            image[i,j] = 255
+
 
 img = Image.fromarray(np.uint8(image),'L')
 img.save("decodedimage.TIFF")

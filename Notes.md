@@ -54,5 +54,12 @@ Oluşmaması lazımsa nerede hata yaptım. Oluşması normalse nasıl 0-255 aras
   + uint8() ile cast edip kaydettiğim için negatif sayılar büyük piksel değerlerine dönüşmüş olabilir.
 
   + denemek için - sayıları 0 a; 255 ten büyük sayıları 255 e çeken bir for loop ekleyebilirim. 
-Ya da direk 0-255 arasına map ederim değerleri.  
+Ya da direk 0-255 arasına map ederim değerleri.
+
+- Bir makaleden: "Any value that ends up being greater than 255 is set to 255 and all negative values are set to 0. This is done sinceall the
+pixel values must be in the range of 0 to 255 coming from the IDCT and due to rounding and quantization, some values fromthe IDCT can be out ofthose ranges." 
+
+ 
+- 0-255 arasına map eden for loopları yazdım. Son bloktaki problemin nerede olduğunu keşfettim.  
+
 	
