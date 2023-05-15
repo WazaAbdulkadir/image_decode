@@ -1,4 +1,4 @@
-# Image Compression Algorithm
+# Image Decoding Algorithm
 # FileName      : image_encode.m
 # ReleaseDate   : 15.05.2023 11:00   AM 
 # Author        : Abdulkadir Arslan  
