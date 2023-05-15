@@ -1,3 +1,10 @@
+# Image Compression Algorithm
+# FileName      : image_encode.m
+# ReleaseDate   : 15.05.2023 11:00   AM 
+# Author        : Abdulkadir Arslan  
+# Version       : 1.0.0
+
+
 from tkinter import Image
 
 import numpy as np
